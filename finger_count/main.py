@@ -34,7 +34,7 @@ while True:
                 print(f"Sent state: {state}, Response: {response.status_code}")
             except requests.exceptions.RequestException as e:
                 print(f"Error sending to ESP8266: {e}")
-
+    
         cv2.putText(frame, f"Finger count: {fingerUp.count(1)}",
                     (20, 460), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 1, cv2.LINE_AA)
 
