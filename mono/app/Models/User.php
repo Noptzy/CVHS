@@ -21,6 +21,7 @@ class User extends Authenticatable
         'nama',
         'status', 
         'foto', 
+        'fototrain', // New fillable attribute
     ];
 
     /**

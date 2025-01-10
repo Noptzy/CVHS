@@ -6,15 +6,16 @@ detector = HandDetector(detectionCon=0.8, maxHands=1)
 video = cv2.VideoCapture(0)
 
 # IP ESP8266
-esp_ip = "http://192.168.100.32/leds"
+esp_ip = "http://192.168.178.80/leds"
 
 # Mapping jumlah jari ke status LED
 finger_states = {
     "[0, 1, 0, 0, 0]": "red",     
     "[0, 1, 1, 0, 0]": "yellow",  
     "[0, 1, 1, 1, 0]": "green",   
-    "[0, 1, 1, 1, 1]": "all",     
-    "[1, 1, 1, 1, 1]": "off",     
+    "[0, 1, 1, 1, 1]": "all",
+    "[1, 1, 1, 1, 1]": "off",
+    # "[0, 0, 0, 0, 1]": "twinkle",
 }
 
 while True:
