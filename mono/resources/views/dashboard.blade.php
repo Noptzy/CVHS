@@ -4,170 +4,140 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IoT LED Control</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .bg-cover {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .bi-lightbulb {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 font-sans text-gray-800">
-    <div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <!-- Navbar -->
-        <section class="navbar bg-gray-800 text-white p-4 text-center rounded-t-lg">
-            <h1 class="text-2xl font-bold tracking-wider">IoT Led Control</h1>
-        </section>
+<body class="bg-light text-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/CVHS.png" alt="Logo" class="rounded-circle" style="width: 40px;">
+                Dashboard
+            </a>
+        </div>
+    </nav>
 
-        <!-- LEDs Section -->
-        <section class="leds grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
-            <!-- LED 1 -->
-            <div class="led bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <img src="assets/led-off.png" alt="" class="led-image mx-auto w-24 h-24" id="dapurLedImage" />
-                <p class="led-location-text mt-4 text-center font-semibold text-gray-600">
-                    Lampu Ruang Dapur
-                </p>
-                <div class="flex justify-center mt-4">
-                    <button
-                        class="led-submit bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition"
-                        id="ledDapur" onclick="toggleDapurLed()">
-                        TURN ON
-                    </button>
+    <!-- Section dengan background -->
+    <section class="position-relative vh-100 d-flex align-items-center justify-content-center bg-cover"
+        style="background-image: url('/images/CVHS-bg.png');">
+        <!-- Overlay untuk menggelapkan gambar -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <!-- Konten/logo di tengah -->
+        <div class="text-center position-relative text-white">
+            <h1 class="display-4 fw-bold">Smart Home</h1>
+            <p class="lead">Computer Vision for Hearing Solutions</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Cards -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <!-- Lampu Indikator -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-lightbulb fs-1 lampu-indikator" data-color="red"></i>
+                        </div>
+                        <h5 class="card-title">Lampu Indikator</h5>
+                    </div>
                 </div>
             </div>
 
-            <!-- LED 2 -->
-            <div class="led bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <img src="assets/led-off.png" alt="" class="led-image mx-auto w-24 h-24" id="tamuLedImage" />
-                <p class="led-location-text mt-4 text-center font-semibold text-gray-600">
-                    Lampu Ruang Tamu
-                </p>
-                <div class="flex justify-center mt-4">
-                    <button
-                        class="led-submit bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition"
-                        id="ledTamu" onclick="toggleTamuLed()">
-                        TURN ON
-                    </button>
+            <!-- Lampu Rumah -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-lightbulb fs-1 lampu-rumah" data-color="blue"></i>
+                        </div>
+                        <h5 class="card-title">Lampu Rumah</h5>
+                    </div>
                 </div>
             </div>
 
-            <!-- LED 3 -->
-            <div class="led bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <img src="assets/led-off.png" alt="" class="led-image mx-auto w-24 h-24" id="makanLedImage" />
-                <p class="led-location-text mt-4 text-center font-semibold text-gray-600">
-                    Lampu Ruang Makan
-                </p>
-                <div class="flex justify-center mt-4">
-                    <button
-                        class="led-submit bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition"
-                        id="ledMakan" onclick="toggleMakanLed()">
-                        TURN ON
-                    </button>
+            <!-- Lampu Taman -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-lightbulb fs-1 lampu-taman" data-color="yellow"></i>
+                        </div>
+                        <h5 class="card-title">Lampu Taman</h5>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- User -->
+            <div class="col-sm-6">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-person-circle text-info fs-1"></i>
+                        </div>
+                        <h5 class="card-title">User</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Camera -->
+            <div class="col-sm-6">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-camera text-info fs-1"></i>
+                        </div>
+                        <h5 class="card-title">Open Camera</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">© 2025 All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script -->
     <script>
-        const endpoint = "http://192.168.100.32"; 
-        function checkAndUpdateLedStatus() {
-            getDapurLed();
-            getTamuLed();
-            getMakanLed();
+        // Fungsi untuk menyalakan/mematikan lampu
+        function toggleLampu(event) {
+            const lampu = event.target; // Elemen lampu yang diklik
+            const color = lampu.dataset.color; // Warna dari atribut data-color
+            
+            // Mengubah warna ikon lampu
+            if (lampu.style.color === color) {
+                lampu.style.color = ""; // Mematikan lampu
+            } else {
+                lampu.style.color = color; // Menyalakan lampu
+            }
         }
 
-        function getDapurLed() {
-            fetch(`${endpoint}/dapur`, {
-                method: "GET"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    const dapurLedButton = document.getElementById('ledDapur');
-                    const dapurLedImage = document.getElementById('dapurLedImage');
-
-                    if (result === "ON") {
-                        dapurLedButton.innerHTML = "TURN OFF";
-                        dapurLedImage.src = "assets/led-on.png";  
-                    } else {
-                        dapurLedButton.innerHTML = "TURN ON";
-                        dapurLedImage.src = "assets/led-off.png"; 
-                    }
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        function getTamuLed() {
-            fetch(`${endpoint}/tamu`, {
-                method: "GET"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    const tamuLedButton = document.getElementById('ledTamu');
-                    const tamuLedImage = document.getElementById('tamuLedImage');
-
-                    if (result === "ON") {
-                        tamuLedButton.innerHTML = "TURN OFF";
-                        tamuLedImage.src = "assets/led-on.png"; 
-                    } else {
-                        tamuLedButton.innerHTML = "TURN ON";
-                        tamuLedImage.src = "assets/led-off.png"; 
-                    }
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        function getMakanLed() {
-            fetch(`${endpoint}/makan`, {
-                method: "GET"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    const makanLedButton = document.getElementById('ledMakan');
-                    const makanLedImage = document.getElementById('makanLedImage');
-
-                    if (result === "ON") {
-                        makanLedButton.innerHTML = "TURN OFF";
-                        makanLedImage.src = "assets/led-on.png";
-                    } else {
-                        makanLedButton.innerHTML = "TURN ON";
-                        makanLedImage.src = "assets/led-off.png";
-                    }
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        function toggleDapurLed() {
-            fetch(`${endpoint}/dapur`, {
-                method: "POST"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    checkAndUpdateLedStatus(); 
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        function toggleTamuLed() {
-            fetch(`${endpoint}/tamu`, {
-                method: "POST"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    checkAndUpdateLedStatus();
-                })
-                .catch(error => console.error("Error:", error));
-        }
-
-        function toggleMakanLed() {
-            fetch(`${endpoint}/makan`, {
-                method: "POST"
-            })
-                .then(response => response.text())
-                .then(result => {
-                    checkAndUpdateLedStatus(); 
-                })
-                .catch(error => console.error("Error:", error));
-        }
-        checkAndUpdateLedStatus();
+        // Menambahkan event listener ke setiap elemen dengan class 'bi-lightbulb'
+        document.querySelectorAll('.bi-lightbulb').forEach((lampu) => {
+            lampu.addEventListener('click', toggleLampu);
+        });
     </script>
 </body>
 
