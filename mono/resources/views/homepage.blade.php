@@ -4,13 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Bootslander Bootstrap Template</title>
+    <title>Computer Vision for Hearing Solution</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/CVHS.png" rel="icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -55,7 +54,8 @@
             <div class="container">
                 <div class="row gy-4 justify-content-between">
                     <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-                        <img src="{{ asset('images/CVHS.png') }}" alt="CVHS" class="rounded-circle">
+                        {{-- <img src="{{ asset('images/CVHS.png') }}" alt="CVHS" class="rounded-circle"> --}}
+                        <img src="{{ asset('images/done.gif') }}" alt="CVHS"">
 
 
                     </div>
