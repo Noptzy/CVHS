@@ -2,17 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="{{ url('/images/CVHS.png') }}" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dashboard - CVHS</title>
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap"
         rel="stylesheet">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,203 +28,125 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
-        /* Animasi Scroll */
-        html {
-            scroll-behavior: smooth;
+        .icon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: #ffffff;
         }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+    
+        .icon-box .icon i {
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-
-        .bg-cover {
-            background-size: cover;
-            background-position: center;
+    
+        .icon-box:hover .icon i {
+            transform: scale(1.2);
+            color: #ff5722; /* Warna berubah saat hover */
         }
-
-        .card {
-            border: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .bi-lightbulb {
-            transition: color 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        /* Warna Dashboard */
-        .bg-primary {
-            background-color: #4A90E2 !important;
-        }
-
-        footer {
-            background-color: #E94E77 !important;
-        }
-
-        /* Warna Ikon Lampu */
-        .lampu-indikator {
-            color: #E94E77;
-        }
-
-        .lampu-rumah {
-            color: #F5A623;
-        }
-
-        .lampu-taman {
-            color: #7ED321;
-        }
-
-        .navbar-brand img {
-            width: 40px;
-            margin-right: 10px;
-        }
-
-        /* Animasi Smooth Fade-In */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+    
+        .icon-box h4 {
+            margin-top: 10px;
         }
     </style>
 </head>
 
-<body class="bg-light text-dark">
-    <!-- Navbar -->
+<body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center">
+                <h1 class="sitename">Computer Vision for Hearing Solutions</h1>
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/dashboard" class="active">Dashboard</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
 
-    <body class="index-page">
-        <header id="header" class="header d-flex align-items-center fixed-top">
-            <div
-                class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-                <a href="/" class="logo d-flex align-items-center">
-                    <h1 class="sitename">Computer Vision for Hearing Solutions</h1>
-                </a>
-                <nav id="navmenu" class="navmenu">
-                    <ul>
-                        <li><a href="/" >Home</a></li>
-                        <li><a href="/dashboard" class="active">Dashboard</a></li>
-                    </ul>
-                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Section dengan background -->
-        <section class="position-relative vh-100 d-flex align-items-center justify-content-center bg-cover fade-in"
-            style="background-image: url('/images/CVHS-bg.png');">
-            <!-- Overlay untuk menggelapkan gambar -->
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-
-            <!-- Konten/logo di tengah -->
-            <div class="text-center position-relative text-white">
-                <h1 class="display-4 fw-bold">Smart Home</h1>
-                <p class="lead">Computer Vision for Hearing Solutions</p>
-                <a href="#features" class="btn btn-warning mt-3">Explore Features</a>
+    <main class="main">
+        <!-- Dashboard Hero Section -->
+        <section id="hero" class="hero section dark-background">
+            <img src="assets/img/dashboard-bg.jpg" alt="" class="hero-bg">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Welcome to Your Dashboard</h1>
+                        <p class="lead">Monitor and control your smart home devices seamlessly.</p>
+                        <a href="#features" class="btn-get-started">Explore Features</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Section 2: Cards -->
-        <div id="features" class="container my-5 fade-in">
-            <div class="row g-4">
-                <!-- Lampu Indikator -->
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="bi bi-lightbulb fs-1 lampu-indikator"></i>
-                            </div>
-                            <h5 class="card-title">Lampu Indikator</h5>
+        <!-- Features Section -->
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-3 gy-4 icon-boxes">
+                    <!-- Lampu Indikator -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box text-center">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            <h3>Lampu Indikator</h3>
+                            <p>Monitor and control the status of indicator lights in real time.</p>
                         </div>
-                    </div>
+                    </div> <!-- End Icon Box -->
+        
+                    <!-- Lampu Rumah -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box text-center">
+                            <i class="bi bi-lamp-fill"></i>
+                            <h3>Lampu Rumah</h3>
+                            <p>Control all home lights easily using gestures or mobile devices.</p>
+                        </div>
+                    </div> <!-- End Icon Box -->
+        
+                    <!-- Lampu Taman -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon-box text-center">
+                            <i class="bi bi-lightbulb-fill"></i>
+                            <h3>Lampu Taman</h3>
+                            <p>Adjust the garden lights for better ambiance at any time.</p>
+                        </div>
+                    </div> <!-- End Icon Box -->
                 </div>
+            </div>
+        </section>
+        
+        
+    </main>
 
-                <!-- Lampu Rumah -->
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="bi bi-lightbulb fs-1 lampu-rumah"></i>
-                            </div>
-                            <h5 class="card-title">Lampu Rumah</h5>
-                        </div>
-                    </div>
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span class="sitename">CVHS</span>
+                    </a>
                 </div>
-
-                <!-- Lampu Taman -->
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="bi bi-lightbulb fs-1 lampu-taman"></i>
-                            </div>
-                            <h5 class="card-title">Lampu Taman</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- User -->
-                <div class="col-sm-6">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="bi bi-person-circle text-info fs-1"></i>
-                            </div>
-                            <h5 class="card-title">User</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Open Camera -->
-                <div class="col-sm-6">
-                    <div class="card shadow h-100">
-                        <div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="bi bi-camera text-info fs-1"></i>
-                            </div>
-                            <h5 class="card-title">Open Camera</h5>
-                        </div>
-                    </div>
+                <div class="col-lg-8 text-center text-lg-end">
+                    <p>© 2025 CVHS. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer class="text-white text-center py-3 fade-in">
-            <p class="mb-0">© 2025 All Rights Reserved. Powered by CVHS.</p>
-        </footer>
+    <!-- Scroll Top -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-        <!-- Script -->
-        <script>
-            // Fungsi untuk menyalakan/mematikan lampu
-            function toggleLampu(event) {
-                const lampu = event.target;
-                const color = lampu.style.color;
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-                // Mengubah warna ikon lampu
-                lampu.style.color = color === 'gray' ? lampu.dataset.color : 'gray';
-            }
-
-            // Menambahkan event listener ke setiap elemen dengan class 'bi-lightbulb'
-            document.querySelectorAll('.bi-lightbulb').forEach((lampu) => {
-                lampu.addEventListener('click', toggleLampu);
-            });
-        </script>
-    </body>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 
 </html>
