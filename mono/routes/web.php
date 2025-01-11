@@ -11,5 +11,8 @@ Route::resource('user', UserController::class);
 Route::get('/finger-control', function () {
     return view('finger-count');
 });
+Route::get('/', function () {
+    return view('homepage');
+});
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
