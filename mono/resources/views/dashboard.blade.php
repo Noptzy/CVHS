@@ -29,6 +29,9 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+
+
     <style>
         .icon-box:hover {
             transform: translateY(-5px);
@@ -89,7 +92,7 @@
                     <!-- Lampu Indikator -->
                     <div class="col" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box text-center">
-                            <i class="bi bi-lightbulb-fill"></i>
+                            <i id="light-on-off" style="width: 200px; height: 200px; margin: auto;"></i>
                             <h3>Lampu Indikator</h3>
                             <p>Monitor and control the status of indicator lights in real time.</p>
                         </div>
@@ -147,6 +150,17 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Light On and Off Animation
+  lottie.loadAnimation({
+    container: document.getElementById('light-on-off'), // Element ID
+    renderer: 'svg', // Renderer type
+    loop: true, // Should the animation loop
+    autoplay: true, // Should the animation play automatically
+    path: 'URL_OR_PATH_TO_JSON/light-on-off.json' // Replace with JSON URL or file path
+  });
+    </script>
 </body>
 
 </html>
