@@ -124,7 +124,8 @@
                                 <div class="icon-box">
                                     <i class="bi bi-camera-video-fill"></i>
                                     <h3>Control Lights via Hand Gestures in Real Time</h3>
-                                    <p>Using a mobile phone or PC camera, users can control lights in real time with just hand gestures, without requiring voice interaction.</p>
+                                    <p>Using a mobile phone or PC camera, users can control lights in real time with
+                                        just hand gestures, without requiring voice interaction.</p>
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -173,7 +174,8 @@
         <div class="container copyright text-center mt-4">
             <p>© <span>Copyright</span> <strong class="px-1 sitename">Computer Vision for Hearing Solutions</strong>
                 <span>All Rights
-                    Reserved</span></p>
+                    Reserved</span>
+            </p>
         </div>
 
     </footer>

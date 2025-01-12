@@ -33,7 +33,7 @@ while True:
     fps = 1/(cTime-pTime)
     pTime = cTime
 
-    cv.putText(img,str(int(fps)),(10,70), cv.FONT_HERSHEY_PLAIN,3,(255,0,255),3)
+    cv.putText(img,str(int(fps)),(10,70), cv.       FONT_HERSHEY_PLAIN,3,(255,0,255),3)
 
     cv.imshow("Image", img)
     cv.waitKey(1)
