@@ -8,14 +8,12 @@ use App\Http\Controllers\PythonController;
 
 Route::resource('user', UserController::class);
 
-Route::get('/finger-control', function () {
-    return view('finger-count');
-});
 Route::get('/', function () {
     return view('homepage');
 });
-Route::get('/finger', function () {
-    return view('finger');
+
+Route::get('/camera', function () {
+    return view('camera');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

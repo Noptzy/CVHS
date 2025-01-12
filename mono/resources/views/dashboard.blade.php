@@ -79,7 +79,7 @@
                     <div class="col-lg-8">
                         <h1>Welcome to Your Dashboard</h1>
                         <p class="lead">Monitor and control your smart home devices seamlessly.</p>
-                        <a href="#features" class="btn-get-started">Explore Features</a>
+                        <a href="/camera" class="btn-get-started">Start Control</a>
                     </div>
                 </div>
             </div>
