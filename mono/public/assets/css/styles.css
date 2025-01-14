@@ -1,0 +1,288 @@
+/* Basic styles */
+body {
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--default-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.header {
+    background-color: #08005e; /* Ubah warna navbar menjadi lebih gelap */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; /* Animasi ketika menggulung */
+}
+
+.header:hover {
+    background-color: #08005e; /* Perubahan warna saat navbar di-hover */
+}
+
+.sitename {
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.navmenu {
+    margin-right: 20px;
+}
+
+.navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navmenu ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navmenu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navmenu ul li a.active {
+    color: #63B3ED; /* Warna untuk link aktif */
+}
+
+.navmenu ul li a:hover {
+    color: #63B3ED; /* Warna link ketika hover */
+}
+
+/* Mobile Navbar */
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navmenu {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: inline-block;
+    }
+}
+
+/* Camera Page */
+.camera-page {
+    padding-top: 80px; /* Jarak antara navbar dan layar kamera */
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.camera-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px; /* Memberikan celah antara kamera dan navbar */
+    margin-bottom: 30px;
+    animation: cameraAnimation 1s ease-in-out;
+}
+
+/* Animasi untuk kamera */
+@keyframes cameraAnimation {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.camera-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #333;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#webcam {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Efek saat video dimuat */
+}
+
+#webcam:hover {
+    transform: scale(1.05); /* Efek zoom ketika hover pada webcam */
+}
+
+/* Control Panel */
+.controls-panel {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.light-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.light-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.light-card h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.light-card p {
+    font-size: 14px;
+}
+
+.light-card .status {
+    font-weight: bold;
+    color: #f00;
+}
+
+.light-card.active {
+    background-color: #e7f5e7;
+    border-color: #2c9e2c;
+}
+
+.row.g-4 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.light-card button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #08005e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.light-card button:hover {
+    background-color: #63B3ED;
+    transform: translateY(-5px); /* Efek angkat tombol */
+}
+
+/* Animasi untuk card LED */
+.light-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.light-card.active:hover {
+    background-color: #c4e3c4;
+}
+
+/* Scrollbar untuk card */
+.row.g-4 {
+    margin: 0 -15px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 40px 0;
+}
+
+footer .footer-top {
+    padding-bottom: 30px;
+}
+
+footer .footer-top .sitename {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+footer .footer-top p {
+    font-size: 14px;
+    color: #666;
+}
+
+footer .footer-top .text-center {
+    margin-top: 30px;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scroll-top i {
+    font-size: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navmenu {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: inline-block;
+    }
+
+    .camera-container {
+        display: none;
+    }
+
+    .light-card {
+        width: 100%;
+    }
+
+    .light-card button {
+        width: 100%;
+    }
+}
