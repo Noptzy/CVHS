@@ -35,6 +35,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/dashboard" class="active">Dashboard</a></li>
+                    <li><a href="/logout">logout</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

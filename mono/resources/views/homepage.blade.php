@@ -39,6 +39,7 @@
                 <ul>
                     <li><a href="#hero" class="active">Home</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/login">Login Ngap</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

@@ -1,0 +1,1 @@
+halo mas {{ Auth::user()->name }} <br>
