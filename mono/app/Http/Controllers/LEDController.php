@@ -1,26 +1,31 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
-class LEDController extends Controller
+class LedController extends Controller
 {
-    private $espIp = 'http://192.168.178.80/leds';
 
-    public function update(Request $request)
+    public function index(){
+        return view('camera2');
+    }
+
+    public function updateState(Request $request)
     {
-        $state = $request->input('state');
-        if (!in_array($state, ['red', 'yellow', 'green', 'all', 'off'])) {
-            return response()->json(['error' => 'Invalid state'], 400);
-        }
+        $validated = $request->validate([
+            'state' => 'required|string|max:10'
+        ]);
 
-        try {
-            $response = Http::post($this->espIp, ['state' => $state]);
-            return response()->json(['message' => 'LED updated', 'esp_response' => $response->status()]);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
+        $state = $validated['state'];
+
+        // Simpan atau proses data sesuai kebutuhan Anda
+        // Misalnya, log state ke file atau database
+        \Log::info("Received state: $state");
+
+        // Contoh: Mengembalikan respons sukses
+        return response()->json([
+            'message' => 'State received successfully',
+            'state' => $state
+        ]);
     }
 }

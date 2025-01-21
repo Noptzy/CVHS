@@ -9,4 +9,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 use App\Http\Controllers\LEDController;
 
-Route::post('/leds', [LEDController::class, 'update']);
+Route::post('/leds', [LEDController::class, 'updateState']);
