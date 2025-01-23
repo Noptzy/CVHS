@@ -13,7 +13,10 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/camera',[LedController::class,'index']);
+Route::get('/camera',function(){
+    return view('camera2');
+});
+Route::get('/led', [LedController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard2');
