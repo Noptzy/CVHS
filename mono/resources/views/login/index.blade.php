@@ -183,7 +183,7 @@
                         <div class="mb-3">
                             <div class="input-group">
                                 <input type="password" name="password" class="form-control" 
-                                       placeholder="Password" required>
+                                       placeholder="Password" required type="button" onclick="togglePasswordVisibility()">
                                 <span class="input-icon">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -209,6 +209,21 @@
             btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Loading...';
             btn.disabled = true;
         });
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const icon = event.currentTarget.querySelector('i');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
     </script>
 </body>
 </html>
