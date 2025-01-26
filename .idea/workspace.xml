@@ -2,34 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9a66ee-b5cb-414c-bc20-275bdadceb98" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/UAS.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/face_recognition.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/images/ilham.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/images/tegar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/sample_faces.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/tegar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finger_count/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/finger_count/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mono/app/Http/Controllers/LEDController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/app/Http/Controllers/LEDController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mono/resources/views/camera2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/resources/views/camera2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/resources/views/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/resources/views/dashboard2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/resources/views/homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/resources/views/homepage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/resources/views/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mono/resources/views/led.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/mono/resources/views/led.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,22 +15,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ryOgKMUSBg64Q83jZoe2zW6Wvo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

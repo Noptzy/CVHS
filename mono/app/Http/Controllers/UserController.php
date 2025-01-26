@@ -20,8 +20,8 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100',
-            'email' => 'required|email|unique:users,email,'. Auth::id(),
-            'password' => 'nullable|string|min:8|confirmed',
+            'email' => 'required|email|unique:users,email,' . Auth::id(),
+            'password' => 'nullable|string|min:8',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -30,12 +30,18 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
 
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
+        if ($request->hasFile('foto')) {
+            // Delete old image if exists
+            if ($user->foto && \Storage::disk('public')->exists($user->foto)) {
+                \Storage::disk('public')->delete($user->foto);
+            }
+
+            // Store new image
+            $user->foto = $request->foto->store('images', 'public');
         }
 
-        if ($request->hasFile('foto')) {
-            $user->foto = $request->foto->store('images', 'public');
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
         }
 
         $user->save();
