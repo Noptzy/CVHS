@@ -13,14 +13,15 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/camera', function () {
-        return view('camera2');
+        return view('camera');
     });
     Route::get('/led', [LedController::class, 'index']);
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard2');
+    return view('dashboard');
 })->middleware('auth')->name('dashboard');
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.index');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -33,4 +34,12 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
     Route::post('/profile/edit', [UserController::class, 'updateProfile'])->name('profile.update');
+});
+
+Route::get('/ds', function () {
+    return view('dashboard2');
+});
+
+Route::get('/cam', function () {
+    return view('camera2');
 });

@@ -264,6 +264,12 @@ footer .footer-top .text-center {
     font-size: 20px;
 }
 
+/* dashboard styling */
+.test {
+    color: #48d624;
+}
+/* dashboard styling */
+
 /* Responsif */
 @media (max-width: 768px) {
     .navmenu {
@@ -286,3 +292,5 @@ footer .footer-top .text-center {
         width: 100%;
     }
 }
+
+
