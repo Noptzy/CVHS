@@ -49,10 +49,10 @@ const body = document.querySelector("body"),
                 const ledButton = document.getElementById(`led${capitalize(room)}`);
                 const ledImage = document.getElementById(`${room}LedImage`);
                 if (result === "ON") {
-                    ledButton.innerHTML = "TURN OFF";
+                    ledButton.innerHTML = "OFF";
                     ledImage.src = "images/led-on.png";
                 } else {
-                    ledButton.innerHTML = "TURN ON";
+                    ledButton.innerHTML = "ON";
                     ledImage.src = "images/led-off.png";
                 }
             } catch (error) {
