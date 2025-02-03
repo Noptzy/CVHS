@@ -32,8 +32,7 @@
         <div class="menu-bar">
             <div class="menu">
                 <li class="dashboard">
-                    <i class='bx bxs-dashboard icon'></i>
-                    <span class="text nav-text">Dashboard</span>
+                    <h3 class="text nav-text">Dashboard</h3>
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
@@ -105,31 +104,31 @@
                             <h4 class="mb-3">Gesture Guide</h4>
                             <div class="gesture-item">
                                 <div>
-                                    <h6>Satu Jari</h6>
+                                    <h5>Satu Jari</h5>
                                     <small>Control Lampu Rumah</small>
                                 </div>
                             </div>
                             <div class="gesture-item">
                                 <div>
-                                    <h6>Dua Jari</h6>
+                                    <h5>Dua Jari</h5>
                                     <small>Control Lampu Taman Satu</small>
                                 </div>
                             </div>
                             <div class="gesture-item">
                                 <div>
-                                    <h6>Tiga Jari</h6>
+                                    <h5>Tiga Jari</h5>
                                     <small>Control Lampu Taman Dua</small>
                                 </div>
                             </div>
                             <div class="gesture-item">
                                 <div>
-                                    <h6>Empat Jari</h6>
+                                    <h5>Empat Jari</h5>
                                     <small>Menyalakan Semua Lampu</small>
                                 </div>
                             </div>
                             <div class="gesture-item">
                                 <div>
-                                    <h6>Lima Jari</h6>
+                                    <h5>Lima Jari</h5>
                                     <small>Mematikan Semua Lampu</small>
                                 </div>
                             </div>
@@ -152,6 +151,18 @@
 
         toggle.addEventListener("click", () => {
             sidebar.classList.toggle("close");
+        });
+
+        //menu active
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentUrl = window.location.pathname; // Ambil URL path saat ini
+            var menuLinks = document.querySelectorAll(".menu-links .nav-link a");
+
+            menuLinks.forEach(function(link) {
+                if (link.getAttribute("href") === currentUrl) {
+                    link.classList.add("active"); // Tambahkan class active
+                }
+            });
         });
 
         //   toggle dropdown profile

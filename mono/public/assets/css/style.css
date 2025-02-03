@@ -68,7 +68,7 @@ body {
 }
 
 .sidebar .menu {
-    margin-top: 35px;
+    margin-top: 10px;
 }
 /* Reusable CSS */
 
@@ -90,11 +90,10 @@ body {
 
 
 
-.sidebar .dashboard {
-    background: var(--blue-pastel);
+.sidebar h3 {
     font-size: medium;
     font-weight: bold;
-    border-radius: 10px;
+    transition: var(--trans-2);
 }
 
 .sidebar li .icon,
@@ -175,6 +174,11 @@ header .logo-text .header-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.menu-links .nav-link a.active {
+    background-color: var(--blue-pastel);
+    border-radius: 5px;
 }
 
 /* .menu-bar .mode {
@@ -350,7 +354,8 @@ main {
 /* ===== LED Section ===== */
     .led-section {
         max-width: 900px;
-        margin: 40px auto;
+        margin-top: 40px;
+        margin: auto;
         padding: 20px;
         text-align: center;
     }
@@ -431,7 +436,7 @@ main {
 /* ===== Distance Section ===== */
 .distance-section {
     min-width: 300px;
-    margin: 10px auto;
+    margin-top: 0px;
     padding: 20px;
     background: var(--primary-color);
     color: white;
@@ -520,12 +525,19 @@ main {
 }
 
 .gesture-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     background: white;
     border-radius: 10px;
     padding: 20px;
     margin-top: 60px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.gesture-guide h4 {
+    margin-bottom: 20px;
+}
 .gesture-item {
     display: flex;
     align-items: center;

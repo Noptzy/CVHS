@@ -7,6 +7,18 @@ toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 
+//menu active
+document.addEventListener("DOMContentLoaded", function () {
+    var currentUrl = window.location.pathname; // Ambil URL path saat ini
+    var menuLinks = document.querySelectorAll(".menu-links .nav-link a");
+
+    menuLinks.forEach(function (link) {
+        if (link.getAttribute("href") === currentUrl) {
+            link.classList.add("active"); // Tambahkan class active
+        }
+    });
+});
+
 //   toggle dropdown profile
 function toggleDropdown() {
     document.getElementById("profileDropdown").classList.toggle("show");
@@ -51,7 +63,7 @@ async function updateLedStatus(room) {
             ledButton.innerHTML = "OFF";
             ledImage.src = "images/led-on.png";
         } else {
-            ledButton.innerHTML = "TURN ON";
+            ledButton.innerHTML = "ON";
             ledImage.src = "images/led-off.png";
         }
     } catch (error) {

@@ -21,7 +21,8 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #040677; /* Color for headings, subheadings and title throughout the website */
+  --heading-color2: #040677;
+  --heading-color: #615EFC; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #1acc8d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -45,7 +46,8 @@
 }
 
 .dark-background {
-  --background-color: #08005e;
+  --background-color2: #08005e;
+  --background-color: #343391;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #0c0091;

@@ -32,8 +32,7 @@
         <div class="menu-bar">
             <div class="menu">
                 <li class="dashboard">
-                    <i class='bx bxs-dashboard icon'></i>
-                    <span class="text nav-text">Dashboard</span>
+                    <h3 class="text nav-text">Dashboard</h3>
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
