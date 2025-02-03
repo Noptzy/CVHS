@@ -98,7 +98,7 @@
                     <li class="led">
                         <img src="images/led-off.png" alt="Lampu Taman Satu" class="led-image" id="tamanSatuLedImage" />
                         <div class="control-led">
-                            <span class="text">Lampu Taman Satu</span>
+                            <span class="text">Lampu Taman I</span>
                             <div class="led-btn-container">
                                 <button class="led-submit" id="ledTamanSatu"
                                     onclick="toggleLed('tamanSatu')">ON</button>
@@ -108,7 +108,7 @@
                     <li class="led">
                         <img src="images/led-off.png" alt="Lampu Taman Dua" class="led-image" id="tamanDuaLedImage" />
                         <div class="control-led">
-                            <span class="text">Lampu Taman Dua</span>
+                            <span class="text">Lampu Taman II</span>
                             <div class="led-btn-container">
                                 <button class="led-submit" id="ledTamanDua" onclick="toggleLed('tamanDua')">ON</button>
                             </div>

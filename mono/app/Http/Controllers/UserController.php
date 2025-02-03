@@ -31,12 +31,12 @@ class UserController extends Controller
         $user->email = $request->email;
 
         if ($request->hasFile('foto')) {
-            // Delete old image if exists
+            // Menghapus Foto lama jika ada
             if ($user->foto && \Storage::disk('public')->exists($user->foto)) {
                 \Storage::disk('public')->delete($user->foto);
             }
 
-            // Store new image
+            // Store Foto baru
             $user->foto = $request->foto->store('images', 'public');
         }
 

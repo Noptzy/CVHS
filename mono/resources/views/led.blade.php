@@ -136,7 +136,6 @@
             }
         }
 
-        // Utility: Capitalize first letter
         function capitalize(str) {
             return str.charAt(0).toUpperCase() + str.slice(1);
         }
@@ -147,9 +146,9 @@
             ['rumah', 'tamanSatu', 'tamanDua'].forEach(updateLedStatus);
             setInterval(updateDistance, 1000); // Update jarak setiap 1 detik
         }
-
         init();
     </script>
 </body>
 
 </html>
+ 

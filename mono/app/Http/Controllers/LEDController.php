@@ -27,7 +27,7 @@ class LedController extends Controller
     public function setLedState($room)
     {
         try {
-            // Kirim permintaan POST ke NodeMCU
+            // Kirim POST ke NodeMCU
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "{$this->nodeMcuEndpoint}/{$room}");
             curl_setopt($ch, CURLOPT_POST, true);
@@ -42,12 +42,12 @@ class LedController extends Controller
     }
 
     public function getDistance()
-{
-    try {
-        $response = file_get_contents("{$this->nodeMcuEndpoint}/distance");
-        return response()->json(['distance' => $response], 200);
-    } catch (\Exception $e) {
-        return response()->json(['error' => 'Failed to fetch distance'], 500);
+    {
+        try {
+            $response = file_get_contents("{$this->nodeMcuEndpoint}/distance");
+            return response()->json(['distance' => $response], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to fetch distance'], 500);
+        }
     }
-}
 }

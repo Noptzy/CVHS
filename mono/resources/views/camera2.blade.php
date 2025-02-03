@@ -80,7 +80,6 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            /* Agar tidak mengganggu interaksi video */
             border-radius: 10px;
         }
 
@@ -147,7 +146,6 @@
                 <div class="camera-container text-center">
                     <div id="notification"></div>
                     <h3 class="mb-4">Hand Gesture Control</h3>
-                    <!-- Video akan ada di bawah Canvas, sehingga canvas akan menggambar di atasnya -->
                     <div class="video-container">
                         <video id="video" autoplay playsinline></video>
                         <canvas id="canvas" width="640" height="480"></canvas>
@@ -229,19 +227,18 @@
         });
 
         hands.onResults((results) => {
-            // Clear canvas
             canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
-            // Draw video frame
+            // Draw Frame Video
             canvasCtx.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
 
-            // Process each detected hand
+            // Logika Pengenalan Tangan
             if (results.multiHandLandmarks) {
                 for (let i = 0; i < results.multiHandLandmarks.length; i++) {
                     const landmarks = results.multiHandLandmarks[i];
                     const handedness = results.multiHandedness[i].label;
 
-                    // Draw landmarks and connections
+                    // Draw landmarks dan koneksinya
                     drawConnectors(
                         canvasCtx,
                         landmarks,
@@ -258,7 +255,6 @@
                         }
                     );
 
-                    // Gesture recognition
                     const gesture = getFingerState(landmarks);
 
                     if (gesture in fingerStates) {
@@ -266,7 +262,7 @@
                         statusElement.textContent =
                             `Status: ${gesture === "11111" ? "Mematikan Semua Lampu" : gesture === "01111" ? "Menyalakan Semua Lampu" : fingerStates[gesture]}`;
                     } else {
-                        statusElement.textContent = "Status: No valid gesture detected";
+                        statusElement.textContent = "Status: Tidak ada Gerakan Yang Valid";
                     }
                 }
             }
@@ -298,7 +294,7 @@
         async function sendGestureCommand(route) {
             try {
                 const url = `${apiEndpoint}${route}`;
-                console.log(`Sending command to: ${url}`);
+                console.log(`Mengirim Perintah Ke: ${url}`);
                 const response = await fetch(url, {
                     method: "POST"
                 });
