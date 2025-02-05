@@ -37,7 +37,7 @@ window.onclick = function (event) {
 };
 
 // toggle led dan ultrasonic
-const endpoint = "http://192.168.100.32";
+const endpoint = "http://192.168.130.80";
 
 // Fetch dengan retry logic
 async function fetchWithRetry(url, options = {}, retries = 3) {
@@ -106,4 +106,4 @@ function init() {
     setInterval(updateDistance, 1000); // Update jarak setiap 1 detik
 }
 
-        init();
+init();

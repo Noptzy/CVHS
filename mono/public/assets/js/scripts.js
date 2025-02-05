@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startCamera();
 });
 
-const endpoint = "http://192.168.100.32";
+const endpoint = "http://192.168.130.80";
 
 function updateLights(fingerCount) {
     if (fingerCount >= 1) toggleDapurLed();

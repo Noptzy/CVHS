@@ -11,7 +11,7 @@ class LedController extends Controller
     {
         return view('led');
     }
-    private $nodeMcuEndpoint = 'http://192.168.100.32'; // Ganti dengan IP NodeMCU
+    private $nodeMcuEndpoint = 'http://192.168.130.80'; // Ganti dengan IP NodeMCU
 
     public function getLedState($room)
     {

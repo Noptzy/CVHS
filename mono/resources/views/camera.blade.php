@@ -182,14 +182,12 @@
             }
         };
 
-
-        // toggle kamera
         const videoElement = document.getElementById('video');
         const canvasElement = document.getElementById('canvas');
         const canvasCtx = canvasElement.getContext('2d');
         const statusElement = document.getElementById('status');
         const notificationElement = document.getElementById('notification');
-        const apiEndpoint = "http://192.168.100.32";
+        const apiEndpoint = "http://192.168.130.80";
 
         const fingerStates = {
             "01000": "/rumah",
@@ -211,19 +209,15 @@
         });
 
         hands.onResults((results) => {
-            // Clear canvas
             canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
-            // Draw video frame
             canvasCtx.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
 
-            // Process each detected hand
             if (results.multiHandLandmarks) {
                 for (let i = 0; i < results.multiHandLandmarks.length; i++) {
                     const landmarks = results.multiHandLandmarks[i];
                     const handedness = results.multiHandedness[i].label;
 
-                    // Draw landmarks and connections
                     drawConnectors(
                         canvasCtx,
                         landmarks,
@@ -239,8 +233,6 @@
                             fillColor: 'white'
                         }
                     );
-
-                    // Gesture recognition
                     const gesture = getFingerState(landmarks);
 
                     if (gesture in fingerStates) {
@@ -248,7 +240,7 @@
                         statusElement.textContent =
                             `Status: ${gesture === "11111" ? "Mematikan Semua Lampu" : gesture === "01111" ? "Menyalakan Semua Lampu" : fingerStates[gesture]}`;
                     } else {
-                        statusElement.textContent = "Status: No valid gesture detected";
+                        statusElement.textContent = "Status: tidak ada jari yang terdeteksi, mohon tunggu...";
                     }
                 }
             }
@@ -257,7 +249,7 @@
         function getFingerState(landmarks) {
             const ujungJari = [8, 12, 16, 20];
             const bases = [6, 10, 14, 18];
-            const state = [];
+            let state = [];
 
             const thumbTip = landmarks[4];
             const thumbBase = landmarks[3];
